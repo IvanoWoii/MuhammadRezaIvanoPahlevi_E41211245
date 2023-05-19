@@ -11,11 +11,15 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
+
+    //fungsi untuk menampilkan auth/register.blade.php
     public function register()
     {
         return view('auth/register');
     }
 
+
+    //fungsi untuk menyimpan data register ke database
     public function registerSave(Request $request)
     {
         Validator::make($request->all(), [
@@ -34,11 +38,13 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
+    //fungsi untuk menampilkan login
     public function login()
     {
         return view('auth/login');
     }
 
+    //fungsi untuk melakukan aksi login dan menyimpan ke session
     public function loginAction(Request $request)
     {
         Validator::make($request->all(), [
@@ -66,6 +72,8 @@ class AuthController extends Controller
     //     return redirect('/login');
     // }
 
+
+    //fungsi untuk ke tampilan profile
     public function profile()
     {
         return view('profile');

@@ -7,12 +7,15 @@ use App\Models\DaftarPrestasi;
 
 class ApiPendidikanController extends Controller
 {
+
+    //fungsi untuk menampilkan semua data
     public function index()
     {
         $pendidikan = DaftarPrestasi::all();
         return response()->json($pendidikan);
     }
 
+    //fungsi untuk menampilkan data menurut id
     public function show($id)
     {
         $pendidikan = DaftarPrestasi::find($id);
@@ -24,6 +27,7 @@ class ApiPendidikanController extends Controller
         return response()->json($pendidikan);
     }
 
+    //fungsi untuk menambahkan data ke database
     public function store(Request $request)
     {
         DaftarPrestasi::create($request->all());
@@ -33,6 +37,7 @@ class ApiPendidikanController extends Controller
         ]);
     }
 
+    //fungsi untuk update data
     public function update(Request $request, $id)
     {
 
@@ -49,6 +54,7 @@ class ApiPendidikanController extends Controller
         ]);
     }
 
+    //fungsi untuk menghapus data
     public function destroy($id)
     {
         $pendidikan = DaftarPrestasi::find($id);

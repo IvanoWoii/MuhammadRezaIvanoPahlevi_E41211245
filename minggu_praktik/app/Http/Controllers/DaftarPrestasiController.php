@@ -10,6 +10,8 @@ class DaftarPrestasiController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     //fungsi untuk menampilkan semua data
     public function index()
     {
         $DaftarPrestasi = DaftarPrestasi::orderBy('created_at', 'DESC')->get();
@@ -20,6 +22,8 @@ class DaftarPrestasiController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+
+     //fungsi untuk merertun view ke form tambah data
     public function create()
     {
         return view('daftarPrestasi.create');
@@ -28,6 +32,8 @@ class DaftarPrestasiController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
+     //fungsi untuk menambah data ke dalam data base
     public function store(Request $request)
     {
         DaftarPrestasi::create($request->all());
@@ -38,6 +44,8 @@ class DaftarPrestasiController extends Controller
     /**
      * Display the specified resource.
      */
+
+     //fungsi untuk mereturn view ke tampilan detail
     public function show(string $id)
     {
         $daftarPrestasi = DaftarPrestasi::findOrFail($id);
@@ -48,6 +56,8 @@ class DaftarPrestasiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+
+     //fungsi untuk mereturn view ke tampilan edit
     public function edit(string $id)
     {
         $daftarPrestasi = DaftarPrestasi::findOrFail($id);
@@ -58,6 +68,8 @@ class DaftarPrestasiController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
+     //fungsi untuk mengupdate data
     public function update(Request $request, string $id)
     {
         $daftarPrestasi = DaftarPrestasi::findOrFail($id);
@@ -70,6 +82,8 @@ class DaftarPrestasiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+
+     //fungsi untuk menghapus data
     public function destroy(string $id)
     {
         $daftarPrestasi = DaftarPrestasi::findOrFail($id);
